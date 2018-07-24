@@ -1,0 +1,525 @@
+//文件列表
+.content-right{
+  width: 100%;
+  margin:24px 0 80px 0;
+}
+.fileBox{
+  width: 100%;
+  padding-right: 286px;
+  position: relative;
+}
+.fileCover{
+  padding: 0;
+  margin-top: 20px;
+  .file-list{
+    display: inline-block;
+    float: left;
+    width: 108px;
+    margin:0 30px 30px 0;
+    padding: 8px 0 0 20px;
+    text-align: center;
+    .file-block{
+      position: relative;
+    }
+    p{
+      font-size: 12px;
+      line-height: 18px;
+      margin:0;
+      padding:0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height:18px;
+    }
+    .file-name{
+      color: #4C5A6A;
+    }
+    .file-size{
+      color: #F28321;
+
+    }
+    .file-selected{
+      display: inline-block;
+      //background: #000;
+      position: absolute;
+      left:-20px;
+      top:0;
+      width: 26px;
+      height: 20px;
+    }
+
+
+  }
+  .file-list:not(.li-checked):hover{
+    background: #F9FAFC url("../images/uncheck.png") 6px 6px no-repeat;
+  }
+  .li-checked{
+    background: #F9FAFC url("../images/check.png") 6px 6px no-repeat;
+  }
+}
+.rightOperate{
+  position: fixed;
+  top:146px;
+  right:0;
+  width:180px;
+  margin-right: 42px;
+  border:1px solid #CBCFD3;
+  background: #F9FAFC;
+  border-radius: 4px;
+  padding:20px;
+  box-sizing: content-box;
+}
+.selectNum{
+  font-size: 12px;
+  color: #717C87;
+}
+.line-separate{
+  width:100%;
+  height:1px;
+  background: #CBD0D3;
+  margin-top: 8px;
+}
+.show-way-title{
+  //text-align: right;
+  margin:0 20px 0 0;
+  border-bottom: 1px solid #CBD0D3;
+  font-size: 12px;
+  line-height: 30px;
+  a{
+    color: #F28321;
+  }
+  a:nth-last-child(1){
+    color: #4C5A6A;
+  }
+}
+.show-way-icon{
+  margin-right: 8px;
+  font-size: 20px;
+  color: #CBD0D3;
+  cursor: pointer;
+  float: right;
+}
+.select-way{
+  color:#4C5A6A;
+}
+
+.displayLine{
+  margin-right: 20px;
+}
+.fileTableBox{
+  width:100%;
+  color: #4C5A6A;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  td{
+    img{
+      margin:0 12px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    b{
+      display: inline-block;
+      width: 140px;
+      word-wrap:break-word;
+      vertical-align: middle;
+    }
+  }
+  tr{
+    border-bottom: 1px solid #CBD0D3;
+    padding:20px 0;
+    height:60px;
+    cursor: pointer;
+
+    td:nth-child(5){
+      position: relative;
+      width: 62px;
+      text-align: right;
+      padding-right: 24px;
+    }
+  }
+
+  .checkBoxSelect{
+    padding-left: 20px;
+    background: url("../images/uncheck.png") no-repeat 12px center;
+  }
+  .checkBoxSelected{
+    background: url("../images/check.png") no-repeat 12px center;
+  }
+}
+
+.operation-total{
+  width:38px;
+  height:28px;
+  border-radius: 4px ;
+  border: 1px solid #CBD0D3;
+  background: #fff;
+  line-height: 28px;
+  margin-bottom: 0;
+  font-size: 14px;
+  float: right;
+}
+
+.operation-box{
+  position: absolute;
+  background: #fff;
+  width: 160px;
+  box-shadow: 0px 4px 8px 0px rgba(20,42,63,0.2);
+  border-radius: 4px;
+  border: 1px solid #CBD0D3;
+  right: 0px;
+  top:46px;
+  z-index: 8;
+  display: none;
+  p{
+    height: 30px;
+    line-height: 30px;
+    color: #142A3F;
+    margin: 0;
+    padding-left: 16px;
+    border-radius: 4px 4px 0px 0px ;
+    border-bottom: 1px solid #CBD0D3;
+    text-align: left;
+    font-size: 12px;
+  }
+  p:hover{
+    background: #F2F5F7;
+  }
+}
+.operateTips{
+  width: 176px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  text-align: center;
+  background: rgba(126, 211, 33, 0.24);
+  border-radius: 4px;
+  border: 1px solid #7ed321;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+.operate-model{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left:0;
+  background:rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.operate-model-box{
+  position: absolute;
+  width: 450px;
+  left: 50%;
+  margin-left: -225px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:rgba(255,255,255,1);
+  box-shadow: 0px 2px 10px 0px rgba(20,42,63,0.36);
+  border-radius: 4px;
+
+}
+.operate-model-header{
+  background: #142A3F;
+  color: #fff;
+  padding:9px 24px;
+  border-radius: 4px 4px 0 0;
+  .operate-model-header-h2{
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+    line-height: 20px;
+  }
+  .operate-model-header-h3{
+    font-size: 12px;
+    font-weight: normal;
+    color: #ABB0B8;
+    margin: 0;
+  }
+  .operate-model-header-close{
+    display: inline-block;
+    position: absolute;
+    right: 24px;
+    float: right;
+    top: 20px;
+    color: #F28321;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+}
+.operate-model-content{
+  padding:0 24px;
+  .operate-model-content-title{
+    font-size: 12px;
+    color: #717C87;
+    line-height: 18px;
+    margin-top: 12px;
+  }
+  .operate-model-content-file{
+    max-height: 226px;
+    overflow-y: auto;
+    background: #F9FAFC;
+    border:1px solid #CBCFD3;
+    border-radius: 4px;
+    font-size: 12px;
+    margin:0 0 24px 0;
+  }
+  .operate-model-file-list{
+    background: #F9FAFC;
+    font-size: 12px;
+    padding:0 0 10px 0;
+
+    li{
+      height:38px;
+      line-height: 38px;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 12px;
+      //border-bottom: 1px solid #CBD0D3;
+      i{
+        margin:0 10px 0 16px;
+      }
+    }
+  }
+}
+.operate-model-footer{
+  padding:0 24px;
+  text-align: right;
+  .operate-model-cancel,.operate-model-confirm{
+    width:90px;
+    height:38px;
+    border-radius: 2px ;
+    border:1px solid #F28321;
+    background: #F28321;
+    color: #fff;
+    margin-bottom: 24px; ;
+  }
+  .operate-model-cancel{
+    margin-right: 16px;
+    border:1px solid #CBD0D3;
+    background: #fff;
+    color: #18283B;
+  }
+}
+
+.operate-model-newFile{
+  border: none;
+  width: 100%;
+  height:38px;
+  line-height: 38px;
+  background: #fff;
+  padding-left: 10px;
+  font-size: 12px;
+
+}
+.errorMsg{
+  text-align: center;
+  color: #F28321;
+  font-size: 12px;
+}
+.operate-model-shareLink{
+  border: none;
+  width: 100%;
+  height:100px;
+  background: #fff;
+  padding-left: 10px;
+  font-size: 12px;
+  resize: none;
+}
+#pickFileBtn{
+
+}
+.pickFileBtn{
+  width: 90px;
+  height: 38px;
+  border-radius: 2px;
+  border: 1px solid #F28321;
+  background: #F28321;
+  color: #fff;
+}
+#pickFileIpt{
+  position: absolute;
+  width: 90px;
+  height: 38px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.SearchFileBox{
+  position: relative;
+  width: 240px;
+  display: inline-block;
+  float: right;
+
+}
+
+.SearchFileIpt{
+  width: 240px;
+  height: 38px;
+  line-height: 38px;
+  border:1px solid #44525D;
+  background: #142A3F url("../images/search.png") no-repeat 12px center;
+  padding-left: 40px;
+  font-size: 12px;
+  border-radius: 20px;
+  color: #ABB0B8;
+}
+
+.vagueBox{
+  position: absolute;
+  height: 100px;
+  width: 240px;
+  background:rgba(255,255,255,1);
+  box-shadow: 0px 8px 8px 0px rgba(20,42,63,0.2);
+  border-radius: 4px ;
+  overflow-y: auto;
+  //display: none;
+  p{
+    line-height: 30px;
+    margin:0;
+    font-size: 12px;
+    padding-left: 16px;
+    cursor: pointer;
+  }
+  p:hover{
+    background: #F2F5F7;
+  }
+}
+
+.loadingAction{
+  text-align: center;
+  color: #F28321;
+  margin: 20px 0;
+}
+
+.loadingActionBox{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top: 50%;
+  padding-top: 30%;
+  transform: translateY(-50%);
+  z-index: 12;
+  text-align: center;
+  color: #F28321;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+//-webkit自定义滚动条样式   start-------------------
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+//Track 外层轨道
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #CAD1D8;
+}
+
+//Handle （拖动条
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #ABB0B8;
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+//-webkit自定义滚动条样式   end  ----------------------
+#treeDemo{
+  padding:16px;
+}
+#treeDemo li{
+  line-height: 24px;
+}
+.ztree * {padding:0; margin:0; font-size:12px; font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif}
+.ztree {margin:0; padding:5px; color:#333}
+.ztree li{padding:0 2px; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0;}
+.ztree li ul{ margin:0; padding:0 0 0 12px}
+.ztree li ul.line{ background:#F28321 0 0 repeat-y;}
+
+.ztree li a { cursor:pointer;color:#142A3F; background-color: transparent;
+  text-decoration:none; vertical-align:top; display: inline-block}
+//.ztree li a:hover {background: #717C87;border-radius: 2px;}
+.ztree li a.curSelectedNode {background:#717C87;border-radius: 4px;color: #fff;
+  padding: 0 6px;}
+.ztree li a.curSelectedNode_Edit {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.tmpTargetNode_inner {padding-top:0px; background-color:#316AC5; color:white; height:16px; border:1px #316AC5 solid;
+  opacity:0.8; filter:alpha(opacity=80)}
+.ztree li a.tmpTargetNode_prev {}
+.ztree li a.tmpTargetNode_next {}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;
+  font-size:12px; border:1px #7EC4CC solid; *border:0px}
+.ztree li span {line-height:16px; margin-right:2px}
+.ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
+  border:0 none; cursor: pointer;outline:none;background-repeat:no-repeat;
+  }
+
+.ztree li span.button.chk {width:13px; height:13px; margin:0 3px 0 0; cursor: auto}
+.ztree li span.button.chk.checkbox_false_full {background-position:0 0}
+.ztree li span.button.chk.checkbox_false_full_focus {background-position:0 -14px}
+.ztree li span.button.chk.checkbox_false_part {background-position:0 -28px}
+.ztree li span.button.chk.checkbox_false_part_focus {background-position:0 -42px}
+.ztree li span.button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full {background-position:-14px 0}
+.ztree li span.button.chk.checkbox_true_full_focus {background-position:-14px -14px}
+.ztree li span.button.chk.checkbox_true_part {background-position:-14px -28px}
+.ztree li span.button.chk.checkbox_true_part_focus {background-position:-14px -42px}
+.ztree li span.button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full {background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full {background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable {background-position:-42px -56px}
+
+.ztree li span.button.switch {width:18px; height:18px}
+.ztree li span.button.root_open{background-position:-92px -54px}
+.ztree li span.button.root_close{background-position:-74px -54px}
+.ztree li span.button.roots_open{background-position:-92px 0}
+.ztree li span.button.roots_close{background-position:-74px 0}
+.ztree li span.button.center_open{background-position:-92px -18px}
+.ztree li span.button.center_close{background-position:-74px -18px}
+.ztree li span.button.bottom_open{background-position:-92px -36px}
+.ztree li span.button.bottom_close{background-position:-74px -36px}
+.ztree li span.button.noline_open{background:url("../images/fold.png") no-repeat left top;}
+.ztree li span.button.noline_close{background:url("../images/expand.png") no-repeat left top}
+.ztree li span.button.root_docu{ background:none;}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-position:-56px -18px}
+.ztree li span.button.bottom_docu{background-position:-56px -36px}
+.ztree li span.button.noline_docu{ background:none;}
+
+.ztree li span.button.ico_open{margin-right:7px;
+  background:url("../images/folderUC.png") no-repeat left bottom; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_close{margin-right:7px; background:url("../images/folderFC.png") no-repeat left bottom;
+  vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_docu{margin-right:2px; background:url("../images/folderFC.png") no-repeat left bottom; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.edit {margin-right:2px; background-position:-110px -48px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.ico_loading{margin-right:2px; background:#F28321; vertical-align:top; *vertical-align:middle}
+
+ul.tmpTargetzTree {background-color:#FFE6B0; opacity:0.8; filter:alpha(opacity=80)}
+
+span.tmpzTreeMove_arrow {width:16px; height:16px; display: inline-block; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;
+  background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+  background-position:-110px -80px; background:#F28321; *background:#F28321;}
+
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden; background-color:#cfcfcf; border:1px #00B83F dotted; opacity:0.8; filter:alpha(opacity=80)}
+.zTreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
+.switch:before{
+  display: none;
+}

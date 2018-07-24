@@ -1,0 +1,20 @@
+{
+  "bdb_host": "192.168.1.231",
+  "bdb_port": "10070",
+  "mongo_port": 28000,
+  "bak_mongo_host": "192.168.1.231",
+  "bak_mongo_port": 27000,
+
+  "mysql_password": "8lab",
+  "mysql_user": "8lab",
+  "mysql_database": "web_kanbox_db",
+  "mysql_port": 3306,
+  "mysql_host": "192.168.1.210",
+  "chain_attach_mount_dir": "data/chain/chain-attach/",
+  "chain_attach_url": "http://192.168.1.162:8300/static/chain/chain-attach/",
+
+  "redis4bigchanidb_host":"192.168.1.241",
+  "redis4bigchanidb_port": 9000,
+  "max_file_data": "/data/kanbox/",
+  "app_path": "/usr/local/tamperproof_client/"
+}
